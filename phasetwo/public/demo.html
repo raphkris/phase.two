@@ -2,10 +2,10 @@
 <html>
 <head>
     <!--
-        Landing page
-        
-        This is the landing page. Rendered will be a welcome message for the end-user, an image that draws
-        them in, and a call to action.
+        End-user chart manipulation
+
+        This page will display chart and data options to the end-user for creating and manipulating their
+        own chart. An example chart will be predefined.
     –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
     <!--
@@ -32,12 +32,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
-    <script src="../src/index.js" type="text/JavaScript"></script>
+    <script src="../src/demo.js" type="text/JavaScript"></script> <!-- Link to separate JavaScript file for this demoChart() -->
 
-    <title>AutoStat | Automotive data visualized.</title>
+    <title>Demo | AutoStat</title>
 
 </head>
-<body class="index">
+<body class="demo">
 
     <!--
         Nav bar
@@ -55,14 +55,15 @@
         </div>
     </nav>
 
+
+
     <!--
-        Welcome message for end-user
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <header>
-        <h1>AutoStat</h1>
-        <h2>Automotive data visualized.</h2>
-        <button onclick="window.location.href='about.html'">Learn more</button>
-    </header>
+        Demo chart
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    <div style="height:75vh;width:75vw;">
+        <canvas id="myChart3" width="100%" height="100%"></canvas>
+    </div>
+    <script>myChart3();</script> -->
 
 </body>
 </html>

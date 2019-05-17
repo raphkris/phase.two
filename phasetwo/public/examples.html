@@ -2,10 +2,10 @@
 <html>
 <head>
     <!--
-        Landing page
-        
-        This is the landing page. Rendered will be a welcome message for the end-user, an image that draws
-        them in, and a call to action.
+        Example charts
+
+        This page will present to the end-user examples of the data content visualized in several different
+        types of graphs.
     –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
     <!--
@@ -34,10 +34,10 @@
 
     <script src="../src/index.js" type="text/JavaScript"></script>
 
-    <title>AutoStat | Automotive data visualized.</title>
+    <title>Examples | AutoStat</title>
 
 </head>
-<body class="index">
+<body class="examples">
 
     <!--
         Nav bar
@@ -55,14 +55,27 @@
         </div>
     </nav>
 
-    <!--
-        Welcome message for end-user
-    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <header>
-        <h1>AutoStat</h1>
-        <h2>Automotive data visualized.</h2>
-        <button onclick="window.location.href='about.html'">Learn more</button>
-    </header>
+    <div class="row">
+            
+        <!--
+            First chart
+        –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div class="six columns">
+            <div style="height:50vh;width:50vw;"><canvas id="myChart1" width="100%" height="100%"></canvas></div>
+            <script>myChart1();</script>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <!--
+            Second chart
+        –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <div class="six columns">
+            <div style="height:50vh;width:50vw;"><canvas id="myChart2" width="100%" height="100%"></canvas></div>
+            <script>myChart2();</script>
+        </div>
+    </div>
 
 </body>
 </html>

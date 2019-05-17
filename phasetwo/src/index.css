@@ -1,13 +1,493 @@
+/*
+Notes
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+Suggested media queries (taken from skeleton.css):
+    @media (min-width: 750px) {}
+    @media (min-width: 1000px) {}
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+Color palette:
+#ae213f Deep Carmine (highlights/accents)
+#6c6c6d Dim Gray (large text)
+#364156 Charcoal / dark blue (small text)
+#f9f9f9 off-white (body background)
+#040302 Rich Black / FOGRA39 (default text color)
+#dfe0e4 Platinum (other text)
+
+ Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+- Temporary properties
+- Universal
+- Typography
+- Nav bar
+- Index.html
+- About.html
+- Examples.html
+- Demo.html
+- group 9
+*/
+
+/*
+Temporary properties
+use these properties to help with sizing and positioning of box elements
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.temporary1    {border: 1px dashed red;}
+.temporary2    {border: 1px solid lightsalmon;}
+.temporary3    {border: 1px dashed yellow;}
+.temporary4    {border: 1px solid limegreen;}
+.temporary5    {border: 1px dashed lightskyblue;}
+.temporary6    {border: 1px solid plum;}
+.temporary7    {border: 1px dashed purple;}
+
+/* Typography 
+currently using skeleton.css fonts
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*@font-face{
+    font-family: "Centra No. 2";
+    src: url("font/CentraNo2-Black.otf") format("otf");
+    src: url("font/CentraNo2-BlackItalic.otf") format("otf");
+    src: url("font/CentraNo2-Bold.otf") format("otf");
+    src: url("font/CentraNo2-BoldItalic.otf") format("otf");
+    src: url("font/CentraNo2-Book.otf") format("otf");
+    src: url("font/CentraNo2-BookItalic.otf") format("otf");
+    src: url("font/CentraNo2-Extrabold.otf") format("otf");
+    src: url("font/CentraNo2-ExtraboldItalic.otf") format("otf");
+    src: url("font/CentraNo2-Hairline.otf") format("otf");
+    src: url("font/CentraNo2-HairlineItalic.otf") format("otf");
+    src: url("font/CentraNo2-Light.otf") format("otf");
+    src: url("font/CentraNo2-LightItalic.otf") format("otf");
+    src: url("font/CentraNo2-Medium.otf") format("otf");
+    src: url("font/CentraNo2-MediumItalic.otf") format("otf");
+    src: url("font/CentraNo2-Thin.otf") format("otf");
+    src: url("font/CentraNo2-ThinItalic.otf") format("otf");}*/
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    color: #040302;}
+
+/* Universal
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; }/* Non-prefixed version, currently supported by Chrome and Opera */
+
+/* Nav bar
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Base nav CSS recipe */
+nav a,
+nav a:link,
+nav a:visited,
+nav a:hover {
+    color: #dfe0e4;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 2.0rem;
+    text-transform: uppercase;}
+nav .override {
+    max-width: 450px;}
+@media (max-width: 749px) { /* Hide the nav bar on phones */
+    nav {
+    visibility: hidden;}
+}
+@media (min-width: 750px) {
+    nav > div {
+        margin-top: 2vh;}
+}
+@media (min-width: 1000px) {
+    nav {
+        height: 10vh;}
+    nav > div {
+        height: 5vh;
+        margin: 2.5vh auto;}
+    nav a,
+    nav a:link,
+    nav a:visited,
+    nav a:hover {
+        font-size: 3.0rem;}
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Index.html
+Landing page
+properties are for individual pages, prefix selectors with class attribute followed by page name
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Base index CSS recipe */
+.index { /* Index background */
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../img/aaron-burden-554339-unsplash.jpg"); /* The image used */
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    overflow: hidden; /* Prevent scrolling */
+    margin: 0; /* Prevent scrolling */}
+.index header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);}
+.index h1 {
+    text-align: center;
+    font-size: 5.0rem;
+    color: #f9f9f9;}
+.index h2 {
+    text-align: center;
+    font-size: 2.0rem;
+    color: #f9f9f9;}
+.index button {
+    color: #f9f9f9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 180%);}
+@media (min-width: 750px) {
+    .index {
+        height: 100vh;
+        width: 100vw;
+        text-align: center; /* Keeps 'Learn more' button centered under <h2> */
+        background-image: url("../img/jonathan-gallegos-722421-unsplash.jpg"); /* The image used */
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        /* height: 500px; You must set a specified height / not used */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        overflow: hidden; /* Prevent scrolling */
+        margin: 0; /* Prevent scrolling */}
+    .index header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);}
+    .index h1 {
+        text-align: center;
+        font-size: 16.0rem;
+        color: #f9f9f9;
+        text-shadow: 3px 3px 5px rgba(108,108,109,0.67);}
+    .index h2 {
+        text-align: center;
+        font-size: 4.0rem;
+        color: #f9f9f9;
+        text-shadow: 3px 3px 5px rgba(108,108,109,0.67);}
+    .index button {
+        transform: translate(-50%, 380%);
+        font-size: 16px;}
+}
+@media (min-width: 1000px) {
+    .index {
+        height: 100vh;
+        width: 100vw;
+        text-align: center;  /* Keeps 'Learn more' button centered under <h2> */
+        background-image: url("../img/jonathan-gallegos-722421-unsplash.jpg"); /* The image used */
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        /* height: 500px; You must set a specified height / not used */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        overflow: hidden; /* Prevent scrolling */
+        margin: 0; /* Prevent scrolling */}
+    .index header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);}
+    .index h1 {
+        text-align: center;
+        font-size: 22.0rem;
+        color: #f9f9f9;
+        text-shadow: 3px 3px 5px rgba(108,108,109,0.67);}
+    .index h2 {
+        text-align: center;
+        font-size: 5.0rem;
+        color: #f9f9f9;
+        text-shadow: 3px 3px 5px rgba(108,108,109,0.67);}
+    .index button {
+    transform: translate(-50%, 500%);
+    font-size: 25px;}
+}
+
+
+/* About.html
+properties are for individual pages, prefix selectors with class attribute followed by page name
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Base about CSS recipe */
+.about {
+    width: 100vw;}
+.about nav {
+    height: 0px;}
+.about .topContainer {
+    background-image: url("../img/beach-bird-s-eye-view-car-1393996.jpg");
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 100vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */}
+.about header {
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 83%);}
+.about h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #f9f9f9;
+    text-shadow: 1px 1px 5px rgba(54,65,86,0.5);}
+.about .bodyContainer {
+    height: auto;
+    width: 100vw;}
+.about .whatPic, .whatWhereWhenText, .whereWhenPic, .whoPic, .whoText {
+    max-height: 150vh;}
+.about .whatPic {
+    background-image: url("../img/auto-automobile-automotive-1140991.jpg");
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 32.5vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    margin-top: 25vh;}
+.about .bodyContainer h1 {
+    text-align: left;
+    padding-left: 5.125vw;
+    color: #364156;
+    text-shadow: none;}
+.about .override1 {
+    margin-top: 2rem;}
+.about .whatWhereWhenText .override2 {
+    margin-top: 6.125vh;}
+.about .bodyContainer p {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    text-align: justify;
+    font-size: 1.825rem;
+    color: #6c6c6d;}
+.about .whereWhenPic {
+    background-image: url("../img/tanner-boriack-538057-unsplash.jpg");
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 45vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */}
+.about .whoPic {
+    background-image: url("../img/simon-migaj-547079-unsplash.jpg");
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 45vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    margin-top: 12.5vh;}
+.about .whyText, .about .whyPic {
+    max-height: 100vh;}
+.about .whyText {
+    padding-top: 12.5vh;}
+.about .whyPic {
+    background-image: url("../img/artistic-asphalt-automobiles-799443.jpg");
+    background-color: #f9f9f9; /* Used if the image is unavailable */
+    height: 66vh; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */}
+.about .mobileExtra {
+    margin: 7.5vh 2.5vw;
+    text-align: center;}
+.about .mobileExtra > .one {
+    text-align: inline-block;}
+.about .mobileExtra button {
+    color: #364156;
+    font-size: 2.5rem;}
+@media (min-width: 750px) {
+    .about header {
+        width: 100vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 41%);}
+    .about h1 {
+        text-align: center;
+        font-size: 5.0rem;
+        color: #f9f9f9;
+        text-shadow: 1px 1px 5px rgba(54,65,86,0.5);}
+    .about .whatPic, .whatWhereWhenText, .whereWhenPic, .whoPic, .whoText {
+        max-height: 85vh;}
+    .about .whatPic {
+        background-image: url("../img/auto-automobile-automotive-1140991.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 32.5vh; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        margin-top: 25vh;}
+    .about .bodyContainer h1 {
+        text-align: left;
+        padding-left: 1.0125vw;
+        color: #364156;
+        text-shadow: none;
+        font-size: 2.75rem;}
+    .about .override1 {
+        padding-top: 5vh;}
+    .about .whatWhereWhenText {
+        margin-top: 25vh;}
+    .about .bodyContainer p {
+        padding-left: 5vw;;
+        padding-right: none;
+        text-align: left;
+        font-size: 1.525rem;
+        color: #6c6c6d;}
+    .about .whereWhenPic {
+        background-image: url("../img/tanner-boriack-538057-unsplash.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 45vh; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        margin-top: 50vh;}
+    .about .whoText {
+        margin-top: 12.5vh;}
+    .about .whoPic {
+        background-image: url("../img/simon-migaj-547079-unsplash.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 45vh; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        margin-top: 12.5vh;}
+    .about .whyText, .about .whyPic {
+        max-height: 70vh;
+        margin-top: 12.25vh;}
+    .about .whyText {
+        padding-top: 12.5vh;
+        padding-left: 6.125vw;
+        padding-right: 2vw;}
+    .about .whyText p {
+        padding-right: 0;}
+    .about .whyPic {
+        background-image: url("../img/artistic-asphalt-automobiles-799443.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 66vh; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */}
+    .about .mobileExtra {
+        margin: 17.25vh 2.5vw;
+        text-align: center;}
+    .about .mobileExtra > .one {
+        text-align: inline-block;}
+    .about .mobileExtra button {
+        color: #364156;
+        font-size: 2.5rem;}
+}
+@media (min-width: 1000px) {
+    .about header {
+        width: 100vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 60%);}
+    .about h1 {
+        text-align: center;
+        font-size: 7.0rem;
+        color: #f9f9f9;
+        text-shadow: 1px 1px 5px rgba(54,65,86,0.5);}
+    .about .whatPic, .whatWhereWhenText, .whereWhenPic, .whoPic, .whoText {
+        max-height: 90vh;}
+    .about .whatPic {
+        background-image: url("../img/auto-automobile-automotive-1140991.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 40VH; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        margin-top: 25vh;}
+    .about .bodyContainer h1 {
+        text-align: left;
+        padding-left: 1.0125vw;
+        color: #364156;
+        text-shadow: none;
+        font-size: 3.5rem;}
+    .about .override1 {
+        padding-top: 5vh;}
+    .about .whatWhereWhenText {
+        margin-top: 25vh;}
+    .about .bodyContainer p {
+        padding-left: 5vw;;
+        padding-right: none;
+        text-align: left;
+        font-size: 2.25rem;
+        color: #6c6c6d;}
+    .about .whereWhenPic {
+        background-image: url("../img/tanner-boriack-538057-unsplash.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 55vh; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        margin-top: 50vh;}
+    .about .whoText {
+        margin-top: 12.5vh;}
+    .about .whoPic {
+        background-image: url("../img/simon-migaj-547079-unsplash.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 60vh; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */
+        margin-top: 12.5vh;}
+    .about .whyText, .about .whyPic {
+        max-height: 70vh;
+        margin-top: 12.25vh;}
+    .about .whyText {
+        padding-top: 12.5vh;
+        padding-left: 6.125vw;
+        padding-right: 2vw;}
+    .about .whyText p {
+        padding-right: 0;}
+    .about .whyPic {
+        background-image: url("../img/artistic-asphalt-automobiles-799443.jpg");
+        background-color: #f9f9f9; /* Used if the image is unavailable */
+        height: 66vh; /* You must set a specified height */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover; /* Resize the background image to cover the entire container */}
+    .about .mobileExtra {
+        margin: 22.125vh 2.5vw;
+        text-align: center;}
+    .about .mobileExtra > .one {
+        text-align: inline-block;}
+    .about .mobileExtra button {
+        color: #364156;
+        font-size: 2.5rem;}
+}
+
+/* Examples.html
+Example charts
+properties are for individual pages, prefix selectors with class attribute followed by page name
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.examples {
+    background-color: #f9f9f9;}
+@media (min-width: 750px) {
+}
+@media (min-width: 1000px) {
+    .examples {
+        overflow: hidden; /* Prevent scrolling */
+        margin: 0; /* Prevent scrolling */}
+}
+
+/* Demo.html
+End-user manipulation
+properties are for individual pages, prefix selectors with class attribute followed by page name
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.demo {
+    background-color: #f9f9f9;}
+@media (min-width: 750px) {
+    .demo nav a.active:after { 
+        width: 100%;}
+}
+@media (min-width: 1000px) {
+    .demo {
+        overflow: hidden; /* Prevent scrolling */
+        margin: 0; /* Prevent scrolling */}
+    .demo nav a.active:after { 
+        width: 100%;}
 }
